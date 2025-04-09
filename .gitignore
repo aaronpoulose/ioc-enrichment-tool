@@ -1,5 +1,14 @@
+# 🔁 Python cache files
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
+*.pyd
+
+# 🧪 Virtual environments
+venv/
+.venv/
+env/
+
+# 🛡️ Config files (secrets, keys)
 config.yaml
 .env
-venv/
