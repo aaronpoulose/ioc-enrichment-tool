@@ -1,41 +1,30 @@
 # IOC Enrichment Tool
 
-A tool to enrich and analyze Indicators of Compromise (IOCs) using various threat intelligence APIs.
+A web-based tool designed to enrich and analyze Indicators of Compromise (IOCs) using threat intelligence APIs like VirusTotal.
 
 ---
 
 ## 📁 Project Structure
 
-- **`cli/`**  
-  Contains the Command Line Interface (CLI) version.
-
 - **`dashboard/`**  
-  Contains the Web Dashboard version.
+  Contains the web dashboard application for enriching IOCs.
 
 ---
 
-## 🚀 How to Run the CLI Tool
+## 🌐 Running the Dashboard Locally
 
-Navigate to `cli` and run:
-
-```bash
-cd cli_tool
-pip install -r requirements.txt
-python main.py --ioc <your_ioc_here>
-
-
-## Setup
-
-1. Install dependencies:
+Navigate to the dashboard directory and run:
 
 ```bash
+cd dashboard
 pip install -r requirements.txt
+python app.py
 
 -----
 ## 📖 Blog Post
 I wrote a detailed blog explaining how I built this tool, how it works, and how you can use it.
 
-👉 [How I Built an IOC Enrichment Tool Using VirusTotal]- https://medium.com/@aaronpaulose.n/how-i-build-a-ioc-enrichment-tool-using-python-and-virus-total-38fc043fac6f
+👉 [How I Built an IOC Enrichment Tool Using VirusTotal]- https://medium.com/@aaronpaulose.n
 
 
 
