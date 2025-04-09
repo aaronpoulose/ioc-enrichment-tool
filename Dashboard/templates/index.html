@@ -1,0 +1,60 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IOC Enrichment Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5">
+    <h2>🔗 IOC Link Scanner</h2>
+    <div class="mb-3">
+        <input type="text" id="urlInput" class="form-control" placeholder="Enter URL to scan">
+    </div>
+    <button class="btn btn-primary" onclick="submitURL()">Scan</button>
+
+    <div class="mt-4" id="result" style="display:none;">
+        <h4>Scan Result</h4>
+        <ul id="resultList" class="list-group"></ul>
+    </div>
+
+    <script>
+        function submitURL() {
+            const url = document.getElementById("urlInput").value;
+            fetch("/scan", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({ url })
+            })
+            .then(res => res.json())
+            .then(data => {
+                const resultList = document.getElementById("resultList");
+                resultList.innerHTML = "";
+
+                if (data.error) {
+                    resultList.innerHTML = `<li class="list-group-item list-group-item-danger">Error: ${data.error}</li>`;
+                } else {
+                    const entries = [
+                        ["URL", data.url],
+                        ["Malicious", data.malicious],
+                        ["Suspicious", data.suspicious],
+                        ["Harmless", data.harmless],
+                        ["Undetected", data.undetected],
+                        ["Categories", data.categories.join(", ") || "None"],
+                        ["Report", `<a href="${data.report_link}" target="_blank">View on VirusTotal</a>`]
+                    ];
+
+                    for (const [label, value] of entries) {
+                        resultList.innerHTML += `<li class="list-group-item"><strong>${label}:</strong> ${value}</li>`;
+                    }
+
+                    document.getElementById("result").style.display = "block";
+                }
+            })
+            .catch(err => {
+                resultList.innerHTML = `<li class="list-group-item list-group-item-danger">Fetch error: ${err}</li>`;
+                document.getElementById("result").style.display = "block";
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+timestamp,url,malicious,suspicious,harmless,undetected,categories,report_link,phishing_detected,phish_detail_page
+2025-04-09 15:02:35,http://allegrolokalnie.pl-oferta8245762.shop,15,2,55,25,"Phishing, Spam (alphaMountain.ai), spyware and malware, Phishing and Other Frauds, phishing and other frauds",https://www.virustotal.com/gui/url/2fb850e80272709281d06b48af1e0679cc6bb66d5ffa66cf3afc89f02924adb1,False,
+2025-04-09 15:02:40,http://allegrolokalnie.pl-oferta8245762.shop,15,2,55,25,"Phishing, Spam (alphaMountain.ai), spyware and malware, Phishing and Other Frauds, phishing and other frauds",https://www.virustotal.com/gui/url/2fb850e80272709281d06b48af1e0679cc6bb66d5ffa66cf3afc89f02924adb1,False,
+2025-04-09 15:23:13,https://748njfn.weebly.com,1,0,66,30,"information technology, web hosting",https://www.virustotal.com/gui/url/8fe3351a97f7434cf77ef62dcfcbad381885deef695e0472c31ead0aaf16a282,False,
